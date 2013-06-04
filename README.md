@@ -9,7 +9,7 @@ It's up to you to make sensible assumptions (both from product and technical poi
 In terms of the solution:
 
 * it should be in Ruby (most of our backend stack is written in Ruby)
-* it should have an interface that we can play with in the review session (e.g. command line, irb console, webapp)
+* it should have a web interface that we can play with in the review session
 * for Foursquare API access, it should only use the supplied `FoursquareProxy#search_venues` method
 * use this GitHub repo like you would any other project
 
