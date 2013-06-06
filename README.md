@@ -8,9 +8,11 @@ It's up to you to make sensible assumptions (both from product and technical poi
 
 In terms of the solution:
 
-* it should be in Ruby (most of our backend stack is written in Ruby)
+* it should be either in Ruby or NodeJS, depending on what we told you when you received this project
 * it should have a web interface that we can play with in the review session
-* for Foursquare API access, it should only use the supplied `FoursquareProxy#search_venues` method
+* for Foursquare API access, it should only use the supplied search method
+  * in Ruby, use `FoursquareProxy#search_venues`
+  * in NodeJS, use `foursquare-proxy#searchVenues()`
 * use this GitHub repo like you would any other project
 
 ## Product Requirements
