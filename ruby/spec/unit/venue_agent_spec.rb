@@ -35,15 +35,26 @@ describe VenueAgent do
   }
 
   describe "#find" do
+    before(:each) do
+        @source = double('foursquare_proxy')
+        @store = double('favourites_store')
+        @source.stub(:search_venues).with('video').and_return(source_response)
+        @store.stub(:where).with({user_id: 'user_id'}).and_return([])
+    end
+
     context "when there is no previous favourites" do
       it "should return a list of venues" do
-        source = double('foursquare_proxy')
-        store = double('favourites_store')
-        source.stub(:search_venues).with('video').and_return(source_response)
-        store.stub(:where).with({user_id: 'user_id'}).and_return([])
-
-        agent = VenueAgent.new(source, store)
+        agent = VenueAgent.new(@source, @store)
         expect(agent.find('user_id', 'video')).to eq [ { name: "Video City", favourite: false },
+                                            { name: "Music & Video Exchange", favourite: false } ]
+      end
+    end
+
+    context "when there is previous favourites" do
+      it "should return a list of venues with favourites" do
+        @store.stub(:where).with({user_id: 'user_id'}).and_return(["Video City"])
+        agent = VenueAgent.new(@source, @store)
+        expect(agent.find('user_id', 'video')).to eq [ { name: "Video City", favourite: true },
                                             { name: "Music & Video Exchange", favourite: false } ]
       end
     end
