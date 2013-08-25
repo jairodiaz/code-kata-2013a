@@ -5,15 +5,15 @@ describe FavouritesStore do
 
   describe "#create" do
     it "should store a favourite for a user" do
-      expect(store.create(user_id: "1", name: "apple")).to be_true
+      expect(store.create(user_id: "1", venue_id: "apple")).to be_true
     end
   end
 
   describe "#destroy_all" do
     it "should delete a favourite for a user" do
       store_1 = FavouritesStore.new
-      store_1.create(user_id: "1", name: "apple")
-      expect(store_1.destroy_all(user_id: "1", name: "apple")).to be_true
+      store_1.create(user_id: "1", venue_id: "apple")
+      expect(store_1.destroy_all(user_id: "1", venue_id: "apple")).to be_true
     end
   end
 
@@ -27,7 +27,7 @@ describe FavouritesStore do
     context "when the user has favourites" do
       it "should return previous favourites" do
         store_1 = FavouritesStore.new
-        store_1.create(user_id: "1", name: "apple")
+        store_1.create(user_id: "1", venue_id: "apple")
         expect(store_1.where(user_id: "1")).to eq ["apple"]
       end
     end

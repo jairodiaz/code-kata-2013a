@@ -29,6 +29,14 @@ class VenueAgent
   private
 
   def parse_results(venues, favourites)
-    venues.map { |venue| { name: venue["name"], favourite: favourites.include?(venue["name"]) } }
+    venues.map do |venue|
+      {
+        venue_id: venue["id"],
+        name: venue["name"],
+        favourite: favourites.include?(venue["id"]),
+        canonical_url: venue["canonicalUrl"],
+        location: venue["location"]
+      }
+    end
   end
 end

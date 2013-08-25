@@ -14,12 +14,12 @@ class FavouritesStore
   end
 
   # Add a favourite for a given user.
-  # @param options Has of the form { user_id: 'valid-user-id', name: 'valid-name-to-store'}
+  # @param options Has of the form { user_id: 'valid-user-id', venue_id: 'valid-name-to-store'}
   def create(options)
     if @store[options[:user_id]]
-      @store[options[:user_id]] << options[:name]
+      @store[options[:user_id]] << options[:venue_id]
     else
-      @store[options[:user_id]] = [options[:name]]
+      @store[options[:user_id]] = [options[:venue_id]]
     end
   end
 
@@ -27,7 +27,7 @@ class FavouritesStore
   # @param options Has of the form { user_id: 'valid-user-id', name: 'valid-name-to-store'}
   def destroy_all(options)
     if @store[options[:user_id]]
-      @store[options[:user_id]].reject! { |favourite| favourite == options[:name] }
+      @store[options[:user_id]].reject! { |favourite| favourite == options[:venue_id] }
       true
     else
       false
