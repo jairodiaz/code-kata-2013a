@@ -15,5 +15,13 @@ describe FavouritesStore do
         expect(store.where(user_id: "user_id")).to be_empty
       end
     end
+
+    context "when the user has favourites" do
+      it "should return previous favourites" do
+        store_1 = FavouritesStore.new
+        store_1.create(user_id: "1", name: "apple")
+        expect(store_1.where(user_id: "1")).to eq ["apple"]
+      end
+    end
   end
 end

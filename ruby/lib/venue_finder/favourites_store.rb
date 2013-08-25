@@ -5,14 +5,15 @@ class FavouritesStore
   end
 
   def where(options)
-    return [] unless @store.has_key?(options["user_id"])
+    return [] unless @store.has_key?(options[:user_id])
+    @store[options[:user_id]]
   end
 
   def create(options)
-    if @store[options["user_id"]]
-      @store[options["user_id"]] << options["name"]
+    if @store[options[:user_id]]
+      @store[options[:user_id]] << options[:name]
     else
-      @store[options["user_id"]] = [options["user_id"]]
+      @store[options[:user_id]] = [options[:name]]
     end
   end
 end
