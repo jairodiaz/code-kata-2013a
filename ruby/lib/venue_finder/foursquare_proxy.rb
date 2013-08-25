@@ -16,5 +16,5 @@ class FoursquareProxy
   def search_venues query
     @client.search_venues(:ll => "#{LAT},#{LONG}", :query => query).groups.first.items
   end
-
 end
+
