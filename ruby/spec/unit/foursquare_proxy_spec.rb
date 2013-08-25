@@ -6,9 +6,9 @@ VCR.configure do |c|
   c.hook_into :webmock # or :fakeweb
 end
 
-describe FoursquareProxy do
+describe VenueFinder::FoursquareProxy do
 
-  let(:proxy) { FoursquareProxy.new }
+  let(:proxy) { VenueFinder::FoursquareProxy.new }
   let(:a_venue) {
     VCR.use_cassette('video') do
       proxy.search_venues("video").first

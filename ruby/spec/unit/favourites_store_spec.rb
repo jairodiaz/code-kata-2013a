@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe FavouritesStore do
-  let(:store) { FavouritesStore.new }
+describe VenueFinder::FavouritesStore do
+  let(:store) { VenueFinder::FavouritesStore.new }
 
   let(:favourite) {
     {
@@ -30,7 +30,7 @@ describe FavouritesStore do
 
   describe "#destroy_all" do
     it "should delete a favourite for a user" do
-      store_1 = FavouritesStore.new
+      store_1 = VenueFinder::FavouritesStore.new
       store_1.create(user_id: "1", favourite: favourite)
       expect(store_1.destroy_all(user_id: "1", favourite: favourite)).to be_true
     end
@@ -45,7 +45,7 @@ describe FavouritesStore do
 
     context "when the user has favourites" do
       it "should return previous favourites" do
-        store_1 = FavouritesStore.new
+        store_1 = VenueFinder::FavouritesStore.new
         store_1.create(user_id: "1", favourite: favourite)
         expect(store_1.where(user_id: "1")).to eq [favourite]
       end
