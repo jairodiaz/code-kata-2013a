@@ -18,12 +18,12 @@ class VenueAgent
 
   # Saves a favourite for a given user.
   def add_favourite(user_id, favourite_name)
-    @favourites_store.create(user_id: user_id, name: favourite_name)
+    @favourites_store.create(user_id: user_id, favourite: favourite_name)
   end
 
   # Removes a favourite for a given user.
   def remove_favourite(user_id, favourite_name)
-   @favourites_store.destroy_all(user_id: user_id, name: favourite_name)
+   @favourites_store.destroy_all(user_id: user_id, favourite: favourite_name)
   end
 
   private
@@ -33,7 +33,7 @@ class VenueAgent
       {
         venue_id: venue["id"],
         name: venue["name"],
-        favourite: favourites.include?(venue["id"]),
+        favourite: favourites.map{ |favorite| favorite[:venue_id] }.include?(venue["id"]),
         canonical_url: venue["canonicalUrl"],
         location: venue["location"]
       }

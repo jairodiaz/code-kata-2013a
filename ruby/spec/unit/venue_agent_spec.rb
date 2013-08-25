@@ -61,6 +61,35 @@ describe VenueAgent do
     }
   }
 
+  let(:venue_video_city) {
+    {
+      venue_id: "4c3234d866e40f478b21c68b",
+      name: "Video City",
+      favourite: false,
+      canonical_url: "https://foursquare.com/v/video-city/4c3234d866e40f478b21c68b",
+      location: location_for_video_city
+    }
+  }
+
+  let(:venue_music_and_video_exchange) {
+    {
+      venue_id: "4c76780066be6dcbc829c30f",
+      name: "Music & Video Exchange",
+      favourite: false,
+      canonical_url: "https://foursquare.com/v/music--video-exchange/4c76780066be6dcbc829c30f",
+      location: location_for_music_and_video_exchange
+    }
+  }
+
+  let(:favourite) {
+    {
+      venue_id: "4c3234d866e40f478b21c68b",
+      name: "Video City",
+      canonical_url: "https://foursquare.com/v/video-city/4c3234d866e40f478b21c68b",
+      location: location_for_video_city
+    }
+  }
+
   before(:each) do
     @source = double('foursquare_proxy')
     @store = double('favourites_store')
@@ -70,13 +99,7 @@ describe VenueAgent do
   describe "#find" do
     context "when there is no previous favourites" do
       it "should return a list of venues" do
-        results = [ { venue_id: "4c3234d866e40f478b21c68b", name: "Video City",
-                      favourite: false, canonical_url: "https://foursquare.com/v/video-city/4c3234d866e40f478b21c68b",
-                      location: location_for_video_city },
-                    { venue_id: "4c76780066be6dcbc829c30f", name: "Music & Video Exchange",
-                      favourite: false, canonical_url: "https://foursquare.com/v/music--video-exchange/4c76780066be6dcbc829c30f",
-                      location: location_for_music_and_video_exchange } ]
-
+        results = [ venue_video_city, venue_music_and_video_exchange ]
         @store.stub(:where).with({user_id: 'user_id'}).and_return([])
         agent = VenueAgent.new(@source, @store)
         expect(agent.find('user_id', 'video')).to eq results
@@ -85,14 +108,10 @@ describe VenueAgent do
 
     context "when there is previous favourites" do
       it "should return a list of venues with favourites" do
-        results = [ { venue_id: "4c3234d866e40f478b21c68b", name: "Video City",
-                      favourite: true, canonical_url: "https://foursquare.com/v/video-city/4c3234d866e40f478b21c68b",
-                      location: location_for_video_city },
-                    { venue_id: "4c76780066be6dcbc829c30f", name: "Music & Video Exchange",
-                      favourite: false, canonical_url: "https://foursquare.com/v/music--video-exchange/4c76780066be6dcbc829c30f",
-                      location: location_for_music_and_video_exchange } ]
-
-        @store.stub(:where).with({user_id: 'user_id'}).and_return(["4c3234d866e40f478b21c68b"])
+        favorited_video_city = venue_video_city
+        favorited_video_city[:favourite] = true
+        results = [ favorited_video_city, venue_music_and_video_exchange ]
+        @store.stub(:where).with({user_id: 'user_id'}).and_return([favourite])
         agent = VenueAgent.new(@source, @store)
         expect(agent.find('user_id', 'video')).to eq results
       end
@@ -101,15 +120,15 @@ describe VenueAgent do
 
   describe "#add_favourite" do
     it "should store a favourite in the favourites_store" do
-      @store.should_receive(:create).with({user_id: 'user_id', name: 'apple'}).and_return(true)
-      VenueAgent.new(@source, @store).add_favourite('user_id', 'apple')
+      @store.should_receive(:create).with({user_id: 'user_id', favourite: favourite }).and_return(true)
+      VenueAgent.new(@source, @store).add_favourite('user_id', favourite)
     end
   end
 
   describe "#remove_favourite" do
     it "should remove a favourite in the favourites_store" do
-      @store.should_receive(:destroy_all).with({user_id: 'user_id', name: 'apple'}).and_return(true)
-      VenueAgent.new(@source, @store).remove_favourite('user_id', 'apple')
+      @store.should_receive(:destroy_all).with({user_id: 'user_id', favourite: favourite }).and_return(true)
+      VenueAgent.new(@source, @store).remove_favourite('user_id', favourite)
     end
   end
 end
