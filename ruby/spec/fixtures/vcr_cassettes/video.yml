@@ -1,0 +1,181 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.foursquare.com/v2/venues/search?client_id=AV03ZKZYEYRCHDPEIJN4QDMCZV30M5UM14XWSONSNS3YQFNV&client_secret=HICXJ5YBXQRJGH0GW0DIYXGSNGAKYXWCK5WL00EWMPHRE1CJ&ll=51.508857899999995,-0.195678&query=video
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - Ruby gem
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 25 Aug 2013 09:09:25 GMT
+      Server:
+      - nginx/1.4.1
+      Content-Type:
+      - application/json; charset=utf-8
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Tracer-Time:
+      - '70'
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4964'
+      Strict-Transport-Security:
+      - max-age=864000
+      X-Ex:
+      - fastly_cdn
+      Content-Length:
+      - '21318'
+      Accept-Ranges:
+      - bytes
+      Via:
+      - 1.1 varnish
+      Age:
+      - '0'
+      X-Served-By:
+      - cache-am70-AMS
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+    body:
+      encoding: US-ASCII
+      string: ! '{"meta":{"code":200,"errorType":"deprecated","errorDetail":"This
+        endpoint will stop returning groups in the future. Please use a current version,
+        see http:\/\/bit.ly\/vywCav."},"response":{"groups":[{"type":"places","name":"Places","items":[{"id":"4c3234d866e40f478b21c68b","name":"Video
+        City","contact":{},"location":{"address":"Notting Hill GTe","lat":51.50882711644852,"lng":-0.19819456963498744,"distance":174,"city":"Kensington","state":"Greater
+        London","country":"United Kingdom","cc":"GB"},"canonicalUrl":"https:\/\/foursquare.com\/v\/video-city\/4c3234d866e40f478b21c68b","categories":[{"id":"4bf58dd8d48988d126951735","name":"Video
+        Store","pluralName":"Video Stores","shortName":"Video Store","icon":"https:\/\/foursquare.com\/img\/categories\/shops\/video.png","parents":["Shop
+        & Service"],"primary":true}],"verified":false,"restricted":true,"stats":{"checkinsCount":50,"usersCount":22,"tipCount":1},"likes":{"count":0,"groups":[]}},{"id":"4c76780066be6dcbc829c30f","name":"Music
+        & Video Exchange","contact":{},"location":{"address":"38-42 Notting Hill Gate","lat":51.509317,"lng":-0.194834,"distance":77,"postalCode":"W11","city":"London","state":"Greater
+        London","country":"United Kingdom","cc":"GB"},"canonicalUrl":"https:\/\/foursquare.com\/v\/music--video-exchange\/4c76780066be6dcbc829c30f","categories":[{"id":"4bf58dd8d48988d10d951735","name":"Record
+        Shop","pluralName":"Record Shops","shortName":"Record Shop","icon":"https:\/\/foursquare.com\/img\/categories\/shops\/record_shop.png","parents":["Shop
+        & Service"],"primary":true}],"verified":false,"restricted":true,"stats":{"checkinsCount":159,"usersCount":111,"tipCount":1},"likes":{"count":0,"groups":[]}},{"id":"4e7b49ac483b73b2d12874c2","name":"Video
+        Content & Advertising Theatre @atdech","contact":{},"location":{"lat":51.496481,"lng":-0.209582,"distance":1681,"city":"Hammersmith","state":"Greater
+        London","country":"United Kingdom","cc":"GB"},"canonicalUrl":"https:\/\/foursquare.com\/v\/video-content--advertising-theatre-atdech\/4e7b49ac483b73b2d12874c2","categories":[{"id":"4bf58dd8d48988d171941735","name":"Event
+        Space","pluralName":"Event Spaces","shortName":"Event Space","icon":"https:\/\/foursquare.com\/img\/categories\/building\/default.png","parents":["Professional
+        & Other Places"],"primary":true}],"verified":false,"restricted":true,"stats":{"checkinsCount":1,"usersCount":1,"tipCount":0},"likes":{"count":0,"groups":[]}},{"id":"4d63b4ea79deb1f7ca361d11","name":"Video
+        Arts","contact":{},"location":{"lat":51.489353,"lng":-0.223011,"distance":2881,"country":"United
+        Kingdom","cc":"GB"},"canonicalUrl":"https:\/\/foursquare.com\/v\/video-arts\/4d63b4ea79deb1f7ca361d11","categories":[],"verified":false,"restricted":true,"stats":{"checkinsCount":1,"usersCount":1,"tipCount":0},"likes":{"count":0,"groups":[]}},{"id":"4e9cba6ddab4aec571a82990","name":"Video
+        Game Store","contact":{},"location":{"lat":51.531582,"lng":-0.232985,"distance":3616,"city":"Hammersmith","state":"Greater
+        London","country":"United Kingdom","cc":"GB"},"canonicalUrl":"https:\/\/foursquare.com\/v\/video-game-store\/4e9cba6ddab4aec571a82990","categories":[{"id":"4bf58dd8d48988d10b951735","name":"Video
+        Game Store","pluralName":"Video Game Stores","shortName":"Video Games","icon":"https:\/\/foursquare.com\/img\/categories\/shops\/videogames.png","parents":["Shop
+        & Service"],"primary":true}],"verified":false,"restricted":true,"stats":{"checkinsCount":10,"usersCount":3,"tipCount":0},"likes":{"count":0,"groups":[]}},{"id":"4f37d50fe4b0a67feca4ef75","name":"Wizard
+        Video","contact":{},"location":{"address":"383 Harrow Road","lat":51.52475247278768,"lng":-0.20296812057495117,"distance":1840,"postalCode":"W9
+        3NA","city":"London","country":"United Kingdom","cc":"GB"},"canonicalUrl":"https:\/\/foursquare.com\/v\/wizard-video\/4f37d50fe4b0a67feca4ef75","categories":[{"id":"4d954b0ea243a5684a65b473","name":"Convenience
+        Store","pluralName":"Convenience Stores","shortName":"Convenience Stores","icon":"https:\/\/foursquare.com\/img\/categories\/shops\/default.png","parents":["Shop
+        & Service"],"primary":true}],"verified":false,"restricted":true,"stats":{"checkinsCount":9,"usersCount":4,"tipCount":2},"likes":{"count":0,"groups":[]}},{"id":"4bb24484a32876b0895e00fe","name":"Prime
+        time video","contact":{"phone":"+442072448720","formattedPhone":"+44 20 7244
+        8720"},"location":{"address":"115 Gloucester Rd.","lat":51.49407614148009,"lng":-0.18273353576660156,"distance":1874,"postalCode":"SW7
+        4ST","city":"Kensington","state":"Greater London","country":"United Kingdom","cc":"GB"},"canonicalUrl":"https:\/\/foursquare.com\/v\/prime-time-video\/4bb24484a32876b0895e00fe","categories":[{"id":"4bf58dd8d48988d126951735","name":"Video
+        Store","pluralName":"Video Stores","shortName":"Video Store","icon":"https:\/\/foursquare.com\/img\/categories\/shops\/video.png","parents":["Shop
+        & Service"],"primary":true}],"verified":false,"restricted":true,"stats":{"checkinsCount":16,"usersCount":5,"tipCount":0},"likes":{"count":0,"groups":[]}},{"id":"4c1b6c73e9c4ef3b33a245aa","name":"raw
+        video","contact":{"phone":"+442079359696","formattedPhone":"+44 20 7935 9696","twitter":"rawvideo"},"location":{"address":"4
+        Paddington St","lat":51.513944,"lng":-0.142453,"distance":3730,"postalCode":"W1U
+        5QE","city":"London","state":"London","country":"United Kingdom","cc":"GB"},"canonicalUrl":"https:\/\/foursquare.com\/v\/raw-video\/4c1b6c73e9c4ef3b33a245aa","categories":[],"verified":false,"restricted":true,"stats":{"checkinsCount":5,"usersCount":1,"tipCount":0},"likes":{"count":0,"groups":[]}},{"id":"4d5bbf349895b1f70377dd0f","name":"Broadcast
+        Video Expo","contact":{},"location":{"address":"Earls Court 2","lat":51.487745,"lng":-0.197535,"distance":2353,"city":"Hammersmith","state":"England","country":"United
+        Kingdom","cc":"GB"},"canonicalUrl":"https:\/\/foursquare.com\/v\/broadcast-video-expo\/4d5bbf349895b1f70377dd0f","categories":[{"id":"4bf58dd8d48988d1ff931735","name":"Convention
+        Center","pluralName":"Convention Centers","shortName":"Convention Center","icon":"https:\/\/foursquare.com\/img\/categories\/building\/conventioncenter.png","parents":["Professional
+        & Other Places"],"primary":true}],"verified":false,"restricted":true,"stats":{"checkinsCount":55,"usersCount":43,"tipCount":1},"likes":{"count":0,"groups":[]}},{"id":"4de517fbc65b7a3e215939b6","name":"Jacobs
+        Digital Photo & Video","contact":{"phone":"+442073516681","formattedPhone":"+44
+        20 7351 6681","twitter":"jacobsdigital"},"location":{"address":"187 Kings
+        Rd.","crossStreet":"Chelsea","lat":51.48734248083712,"lng":-0.1684856414794922,"distance":3047,"postalCode":"SW3
+        5EB","city":"London","state":"Greater London","country":"United Kingdom","cc":"GB"},"canonicalUrl":"https:\/\/foursquare.com\/v\/jacobs-digital-photo--video\/4de517fbc65b7a3e215939b6","categories":[{"id":"4bf58dd8d48988d122951735","name":"Electronics
+        Store","pluralName":"Electronics Stores","shortName":"Electronics","icon":"https:\/\/foursquare.com\/img\/categories\/shops\/technology.png","parents":["Shop
+        & Service"],"primary":true}],"verified":false,"restricted":true,"stats":{"checkinsCount":13,"usersCount":10,"tipCount":1},"url":"http:\/\/www.jacobsdigital.co.uk","likes":{"count":0,"groups":[]}},{"id":"4e00eff9d22db37fb026aa60","name":"Video
+        Exchange","contact":{"phone":"+442088068005","formattedPhone":"+44 20 8806
+        8005"},"location":{"address":"66 Stamford Hill","crossStreet":"Stoke Newington","lat":51.548315079999995,"lng":-0.068562,"distance":9838,"postalCode":"N166XS","city":"Hackney","state":"Greater
+        London","country":"United Kingdom","cc":"GB"},"canonicalUrl":"https:\/\/foursquare.com\/v\/video-exchange\/4e00eff9d22db37fb026aa60","categories":[{"id":"4bf58dd8d48988d126951735","name":"Video
+        Store","pluralName":"Video Stores","shortName":"Video Store","icon":"https:\/\/foursquare.com\/img\/categories\/shops\/video.png","parents":["Shop
+        & Service"],"primary":true}],"verified":false,"restricted":true,"stats":{"checkinsCount":3,"usersCount":1,"tipCount":0},"likes":{"count":0,"groups":[]}},{"id":"4c875ed2d92ea093954d7572","name":"British
+        Video Association","contact":{},"location":{"address":"167 great portland
+        street","lat":51.51849793713102,"lng":-0.14208395775392074,"distance":3864,"city":"Paddington","state":"Greater
+        London","country":"United Kingdom","cc":"GB"},"canonicalUrl":"https:\/\/foursquare.com\/v\/british-video-association\/4c875ed2d92ea093954d7572","categories":[{"id":"4bf58dd8d48988d1f1931735","name":"General
+        Entertainment","pluralName":"General Entertainment","shortName":"Entertainment","icon":"https:\/\/foursquare.com\/img\/categories\/arts_entertainment\/default.png","parents":["Arts
+        & Entertainment"],"primary":true}],"verified":false,"restricted":true,"stats":{"checkinsCount":10,"usersCount":3,"tipCount":0},"likes":{"count":0,"groups":[]}},{"id":"4f86db05e4b09445eaadfbda","name":"Tremor
+        Video UK","contact":{},"location":{"address":"131-151 Great Titchfield Street","lat":51.521635,"lng":-0.141985,"distance":3982,"city":"London","country":"United
+        Kingdom","cc":"GB"},"canonicalUrl":"https:\/\/foursquare.com\/v\/tremor-video-uk\/4f86db05e4b09445eaadfbda","categories":[{"id":"4bf58dd8d48988d124941735","name":"Office","pluralName":"Offices","shortName":"Office","icon":"https:\/\/foursquare.com\/img\/categories\/building\/default.png","parents":["Professional
+        & Other Places"],"primary":true}],"verified":false,"restricted":true,"stats":{"checkinsCount":12,"usersCount":4,"tipCount":0},"likes":{"count":0,"groups":[]}},{"id":"504a5622e4b09ab3b2ff191e","name":"Video
+        Overground","contact":{},"location":{"lat":51.562957,"lng":-0.072572,"distance":10436,"country":"United
+        Kingdom","cc":"GB"},"canonicalUrl":"https:\/\/foursquare.com\/v\/video-overground\/504a5622e4b09ab3b2ff191e","categories":[{"id":"4bf58dd8d48988d1e9931735","name":"Rock
+        Club","pluralName":"Rock Clubs","shortName":"Rock Club","icon":"https:\/\/foursquare.com\/img\/categories\/arts_entertainment\/musicvenue_rockclub.png","parents":["Arts
+        & Entertainment","Music Venue"],"primary":true}],"verified":false,"restricted":true,"stats":{"checkinsCount":5,"usersCount":1,"tipCount":0},"likes":{"count":0,"groups":[]}},{"id":"4e3aef8eb3ade614e12787f1","name":"Jacobs
+        Digital Photo & Video","contact":{"phone":"+442072331605","formattedPhone":"+44
+        20 7233 1605","twitter":"jacobsdigital"},"location":{"address":"34 Broadway","crossStreet":"Westminster","lat":51.499366177145816,"lng":-0.1329517364501953,"distance":4472,"postalCode":"SW1H
+        0BH","city":"London","state":"Greater London","country":"United Kingdom","cc":"GB"},"canonicalUrl":"https:\/\/foursquare.com\/v\/jacobs-digital-photo--video\/4e3aef8eb3ade614e12787f1","categories":[{"id":"4bf58dd8d48988d122951735","name":"Electronics
+        Store","pluralName":"Electronics Stores","shortName":"Electronics","icon":"https:\/\/foursquare.com\/img\/categories\/shops\/technology.png","parents":["Shop
+        & Service"],"primary":true}],"verified":false,"restricted":true,"stats":{"checkinsCount":3,"usersCount":3,"tipCount":1},"likes":{"count":0,"groups":[]}},{"id":"4c9645de72dd224b7fd7aa91","name":"Video
+        Xchange","contact":{},"location":{"address":"66 Stamford Hill Road","lat":51.566216,"lng":-0.073411,"distance":10603,"city":"London","state":"Greater
+        London","country":"United Kingdom","cc":"GB"},"canonicalUrl":"https:\/\/foursquare.com\/v\/video-xchange\/4c9645de72dd224b7fd7aa91","categories":[],"verified":false,"restricted":true,"stats":{"checkinsCount":2,"usersCount":1,"tipCount":0},"likes":{"count":0,"groups":[]}},{"id":"4d4d726980cb6dcbca2a1001","name":"Universal
+        Video","contact":{},"location":{"lat":51.46197544423673,"lng":-0.22122859954833984,"distance":5511,"city":"Wandsworth","state":"England","country":"United
+        Kingdom","cc":"GB"},"canonicalUrl":"https:\/\/foursquare.com\/v\/universal-video\/4d4d726980cb6dcbca2a1001","categories":[{"id":"4bf58dd8d48988d126951735","name":"Video
+        Store","pluralName":"Video Stores","shortName":"Video Store","icon":"https:\/\/foursquare.com\/img\/categories\/shops\/video.png","parents":["Shop
+        & Service"],"primary":true}],"verified":false,"restricted":true,"stats":{"checkinsCount":6,"usersCount":3,"tipCount":1},"likes":{"count":0,"groups":[]}},{"id":"4c013217d715c928a7acfce3","name":"Music
+        & Video Exchange","contact":{},"location":{"address":"208 High St.","lat":51.540328,"lng":-0.143744,"distance":5021,"city":"Camden","state":"Greater
+        London","country":"United Kingdom","cc":"GB"},"canonicalUrl":"https:\/\/foursquare.com\/v\/music--video-exchange\/4c013217d715c928a7acfce3","categories":[{"id":"4bf58dd8d48988d10d951735","name":"Record
+        Shop","pluralName":"Record Shops","shortName":"Record Shop","icon":"https:\/\/foursquare.com\/img\/categories\/shops\/record_shop.png","parents":["Shop
+        & Service"],"primary":true}],"verified":false,"restricted":true,"stats":{"checkinsCount":137,"usersCount":95,"tipCount":0},"likes":{"count":0,"groups":[]}},{"id":"4c2da423987f20a1a5ca49aa","name":"Bridges
+        Video Conferencing","contact":{},"location":{"lat":51.51814,"lng":-0.119622,"distance":5369,"country":"United
+        Kingdom","cc":"GB"},"canonicalUrl":"https:\/\/foursquare.com\/v\/bridges-video-conferencing\/4c2da423987f20a1a5ca49aa","categories":[],"verified":false,"restricted":true,"stats":{"checkinsCount":3,"usersCount":3,"tipCount":0},"likes":{"count":0,"groups":[]}},{"id":"4ece421cb8f7971d6823ef42","name":"iab
+        Video Engage","contact":{},"location":{"lat":51.50240638729586,"lng":-0.1182257541431775,"distance":5414,"country":"United
+        Kingdom","cc":"GB"},"canonicalUrl":"https:\/\/foursquare.com\/v\/iab-video-engage\/4ece421cb8f7971d6823ef42","categories":[{"id":"4bf58dd8d48988d171941735","name":"Event
+        Space","pluralName":"Event Spaces","shortName":"Event Space","icon":"https:\/\/foursquare.com\/img\/categories\/building\/default.png","parents":["Professional
+        & Other Places"],"primary":true}],"verified":false,"restricted":true,"stats":{"checkinsCount":2,"usersCount":2,"tipCount":0},"likes":{"count":0,"groups":[]}},{"id":"4bffd85fc30a2d7f9386111d","name":"Warner
+        Video Europe","contact":{},"location":{"lat":51.520333,"lng":-0.119063,"distance":5459,"country":"United
+        Kingdom","cc":"GB"},"canonicalUrl":"https:\/\/foursquare.com\/v\/warner-video-europe\/4bffd85fc30a2d7f9386111d","categories":[{"id":"4bf58dd8d48988d127941735","name":"Conference
+        Room","pluralName":"Conference Rooms","shortName":"Conference room","icon":"https:\/\/foursquare.com\/img\/categories\/building\/default.png","parents":["Professional
+        & Other Places","Office"],"primary":true}],"verified":false,"restricted":true,"stats":{"checkinsCount":5,"usersCount":5,"tipCount":0},"likes":{"count":0,"groups":[]}},{"id":"4e660dae52b1260c14a38197","name":"Harry''s
+        News and Video","contact":{},"location":{"lat":51.457829,"lng":-0.165813,"distance":6045,"city":"London","state":"Greater
+        London","country":"United Kingdom","cc":"GB"},"canonicalUrl":"https:\/\/foursquare.com\/v\/harrys-news-and-video\/4e660dae52b1260c14a38197","categories":[{"id":"4d954b0ea243a5684a65b473","name":"Convenience
+        Store","pluralName":"Convenience Stores","shortName":"Convenience Stores","icon":"https:\/\/foursquare.com\/img\/categories\/shops\/default.png","parents":["Shop
+        & Service"],"primary":true}],"verified":false,"restricted":true,"stats":{"checkinsCount":3,"usersCount":2,"tipCount":1},"likes":{"count":0,"groups":[]}},{"id":"4ebaaacddab495868c6ee7ce","name":"bfi
+        video publishing","contact":{},"location":{"lat":51.517989360519024,"lng":-0.13325331615261016,"distance":4442,"country":"United
+        Kingdom","cc":"GB"},"canonicalUrl":"https:\/\/foursquare.com\/v\/bfi-video-publishing\/4ebaaacddab495868c6ee7ce","categories":[{"id":"4bf58dd8d48988d174941735","name":"Coworking
+        Space","pluralName":"Coworking Spaces","shortName":"Coworking Space","icon":"https:\/\/foursquare.com\/img\/categories\/building\/default.png","parents":["Professional
+        & Other Places","Office"],"primary":true}],"verified":false,"restricted":true,"stats":{"checkinsCount":108,"usersCount":7,"tipCount":0},"likes":{"count":0,"groups":[]}},{"id":"4bd01e90046076b075656f71","name":"Jacobs
+        Digital Photo & Video","contact":{"phone":"+442074365544","formattedPhone":"+44
+        20 7436 5544","twitter":"jacobsdigital"},"location":{"address":"74 New Oxford
+        St.","lat":51.516785289999994,"lng":-0.127784,"distance":4785,"postalCode":"WC1A
+        1EU","city":"London","state":"Greater London","country":"United Kingdom","cc":"GB"},"canonicalUrl":"https:\/\/foursquare.com\/v\/jacobs-digital-photo--video\/4bd01e90046076b075656f71","categories":[{"id":"4bf58dd8d48988d122951735","name":"Electronics
+        Store","pluralName":"Electronics Stores","shortName":"Electronics","icon":"https:\/\/foursquare.com\/img\/categories\/shops\/technology.png","parents":["Shop
+        & Service"],"primary":true}],"verified":false,"restricted":true,"stats":{"checkinsCount":103,"usersCount":74,"tipCount":2},"url":"http:\/\/www.jacobsdigital.co.uk","likes":{"count":0,"groups":[]}},{"id":"4c20bc083573c9b611c63515","name":"The
+        Film & Video Workshop","contact":{},"location":{"address":"Hungerford Rd","lat":51.5486871042273,"lng":-0.12599921229416544,"distance":6553,"postalCode":"N7
+        9LF","city":"Holloway\/ Camden","state":"Greater London","country":"United
+        Kingdom","cc":"GB"},"canonicalUrl":"https:\/\/foursquare.com\/v\/the-film--video-workshop\/4c20bc083573c9b611c63515","categories":[{"id":"4eb1bdde3b7b55596b4a7490","name":"Photography
+        Lab","pluralName":"Photography Labs","shortName":"Photography Lab","icon":"https:\/\/foursquare.com\/img\/categories\/shops\/default.png","parents":["Shop
+        & Service"],"primary":true}],"verified":false,"restricted":true,"stats":{"checkinsCount":7,"usersCount":3,"tipCount":0},"likes":{"count":0,"groups":[]}},{"id":"4bd8709835aad13aaae090f3","name":"Music
+        & Video Exchange","contact":{},"location":{"address":"51 Berwick St.","lat":51.51331096371327,"lng":-0.1347465289003954,"distance":4250,"city":"London","state":"Greater
+        London","country":"United Kingdom","cc":"GB"},"canonicalUrl":"https:\/\/foursquare.com\/v\/music--video-exchange\/4bd8709835aad13aaae090f3","categories":[{"id":"4bf58dd8d48988d10d951735","name":"Record
+        Shop","pluralName":"Record Shops","shortName":"Record Shop","icon":"https:\/\/foursquare.com\/img\/categories\/shops\/record_shop.png","parents":["Shop
+        & Service"],"primary":true}],"verified":false,"restricted":true,"stats":{"checkinsCount":311,"usersCount":154,"tipCount":2},"likes":{"count":0,"groups":[]}},{"id":"5058471ee4b0700b1fbb127c","name":"Six3
+        Video Messenger","contact":{"twitter":"six3"},"location":{"address":"Shropshire
+        House","crossStreet":"Capper Street","lat":51.522596,"lng":-0.135316,"distance":4452,"city":"London","country":"United
+        Kingdom","cc":"GB"},"canonicalUrl":"https:\/\/foursquare.com\/v\/six3-video-messenger\/5058471ee4b0700b1fbb127c","categories":[{"id":"4bf58dd8d48988d125941735","name":"Tech
+        Startup","pluralName":"Tech Startups","shortName":"Tech Startup","icon":"https:\/\/foursquare.com\/img\/categories\/shops\/technology.png","parents":["Professional
+        & Other Places","Office"],"primary":true}],"verified":false,"restricted":true,"stats":{"checkinsCount":153,"usersCount":5,"tipCount":2},"likes":{"count":0,"groups":[]}},{"id":"4bd5a0027b1876b092028b86","name":"VET
+        - Video Editor Training","contact":{},"location":{"address":"2-4 Hoxton Sq","lat":51.527482,"lng":-0.08154,"distance":8173,"city":"Hackney","state":"Greater
+        London","country":"United Kingdom","cc":"GB"},"canonicalUrl":"https:\/\/foursquare.com\/v\/vet--video-editor-training\/4bd5a0027b1876b092028b86","categories":[{"id":"4bf58dd8d48988d130941735","name":"Building","pluralName":"Buildings","shortName":"Building","icon":"https:\/\/foursquare.com\/img\/categories\/building\/default.png","parents":["Professional
+        & Other Places"],"primary":true}],"verified":false,"restricted":true,"stats":{"checkinsCount":11,"usersCount":6,"tipCount":0},"likes":{"count":0,"groups":[]}},{"id":"4c041e2c187ec928df9db67b","name":"Primetime
+        video shop","contact":{},"location":{"address":"386 garrett lane","lat":51.440872,"lng":-0.18671929836273193,"distance":7593,"city":"Wandsworth","state":"Greater
+        London","country":"United Kingdom","cc":"GB"},"canonicalUrl":"https:\/\/foursquare.com\/v\/primetime-video-shop\/4c041e2c187ec928df9db67b","categories":[{"id":"4bf58dd8d48988d126951735","name":"Video
+        Store","pluralName":"Video Stores","shortName":"Video Store","icon":"https:\/\/foursquare.com\/img\/categories\/shops\/video.png","parents":["Shop
+        & Service"],"primary":true}],"verified":false,"restricted":true,"stats":{"checkinsCount":9,"usersCount":5,"tipCount":1},"likes":{"count":0,"groups":[]}},{"id":"4e4cdeeb483b734b807e1b7a","name":"White
+        Room Photography and Video Studio","contact":{},"location":{"lat":51.44529179322748,"lng":-0.12476547263953289,"distance":8616,"city":"Lambeth","state":"Greater
+        London","country":"United Kingdom","cc":"GB"},"canonicalUrl":"https:\/\/foursquare.com\/v\/white-room-photography-and-video-studio\/4e4cdeeb483b734b807e1b7a","categories":[{"id":"4bf58dd8d48988d171941735","name":"Event
+        Space","pluralName":"Event Spaces","shortName":"Event Space","icon":"https:\/\/foursquare.com\/img\/categories\/building\/default.png","parents":["Professional
+        & Other Places"],"primary":true}],"verified":false,"restricted":true,"stats":{"checkinsCount":51,"usersCount":16,"tipCount":0},"likes":{"count":0,"groups":[]}}]}]}}'
+    http_version: 
+  recorded_at: Sun, 25 Aug 2013 09:09:21 GMT
+recorded_with: VCR 2.5.0

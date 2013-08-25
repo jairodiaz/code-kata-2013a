@@ -11,4 +11,5 @@ group :development, :test do
   gem 'simplecov', :require => false
   gem 'redcarpet'
   gem 'yard'
+  gem 'vcr'
 end

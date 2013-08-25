@@ -1,13 +1,25 @@
 require 'spec_helper'
+require 'vcr'
+
+VCR.configure do |c|
+  c.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
+  c.hook_into :webmock # or :fakeweb
+end
 
 describe FoursquareProxy do
 
   let(:proxy) { FoursquareProxy.new }
-  let(:a_venue) { proxy.search_venues("video").first }
+  let(:a_venue) {
+    VCR.use_cassette('video') do
+      proxy.search_venues("video").first
+    end
+  }
 
   describe "#search_venues" do
     it "should return an Array" do
-      expect(proxy.search_venues("music").class).to eq Array
+      VCR.use_cassette('video') do
+        expect(proxy.search_venues("video").class).to eq Array
+      end
     end
 
     context "should return a venue" do
