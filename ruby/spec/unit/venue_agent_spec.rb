@@ -35,12 +35,14 @@ describe VenueAgent do
   }
 
   describe "#find" do
-    it "should return a list of venues" do
-      source = double('foursquare_proxy')
-      source.stub(:search_venues).with('video').and_return(source_response)
-      agent = VenueAgent.new(source)
-      expect(agent.find('video')).to eq [ { name: "Video City", favourite: false },
-                                          { name: "Music & Video Exchange", favourite: false } ]
+    context "when there is no previous favourites" do
+      it "should return a list of venues" do
+        source = double('foursquare_proxy')
+        source.stub(:search_venues).with('video').and_return(source_response)
+        agent = VenueAgent.new(source)
+        expect(agent.find('video')).to eq [ { name: "Video City", favourite: false },
+                                            { name: "Music & Video Exchange", favourite: false } ]
+      end
     end
   end
 end
