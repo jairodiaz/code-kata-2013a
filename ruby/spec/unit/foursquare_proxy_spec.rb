@@ -16,13 +16,13 @@ describe FoursquareProxy do
   }
 
   describe "#search_venues" do
-    it "should return an Array" do
+    it "should return an Array of venues" do
       VCR.use_cassette('video') do
         expect(proxy.search_venues("video").class).to eq Array
       end
     end
 
-    context "should return a venue" do
+    describe "a venue" do
       it "should have an id" do
         expect(a_venue["id"]).to eq "4c3234d866e40f478b21c68b"
       end
