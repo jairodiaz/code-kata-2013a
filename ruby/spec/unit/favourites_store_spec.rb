@@ -3,17 +3,36 @@ require 'spec_helper'
 describe FavouritesStore do
   let(:store) { FavouritesStore.new }
 
+  let(:favourite) {
+    {
+      venue_id: "4c3234d866e40f478b21c68b",
+      name: "Video City",
+      favourite: true,
+      canonical_url: "https://foursquare.com/v/video-city/4c3234d866e40f478b21c68b",
+      location:  {
+         "address" => "Notting Hill GTe",
+             "lat" => 51.50882711644852,
+             "lng" => -0.19819456963498744,
+        "distance" => 174,
+            "city" => "Kensington",
+           "state" => "Greater London",
+         "country" => "United Kingdom",
+              "cc" => "GB"
+      }
+    }
+  }
+
   describe "#create" do
     it "should store a favourite for a user" do
-      expect(store.create(user_id: "1", favourite: "apple")).to be_true
+      expect(store.create(user_id: "1", favourite: favourite)).to be_true
     end
   end
 
   describe "#destroy_all" do
     it "should delete a favourite for a user" do
       store_1 = FavouritesStore.new
-      store_1.create(user_id: "1", favourite: "apple")
-      expect(store_1.destroy_all(user_id: "1", favourite: "apple")).to be_true
+      store_1.create(user_id: "1", favourite: favourite)
+      expect(store_1.destroy_all(user_id: "1", favourite: favourite)).to be_true
     end
   end
 
@@ -27,8 +46,8 @@ describe FavouritesStore do
     context "when the user has favourites" do
       it "should return previous favourites" do
         store_1 = FavouritesStore.new
-        store_1.create(user_id: "1", favourite: "apple")
-        expect(store_1.where(user_id: "1")).to eq ["apple"]
+        store_1.create(user_id: "1", favourite: favourite)
+        expect(store_1.where(user_id: "1")).to eq [favourite]
       end
     end
   end
