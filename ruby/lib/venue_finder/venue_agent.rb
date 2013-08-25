@@ -26,6 +26,11 @@ class VenueAgent
    @favourites_store.destroy_all(user_id: user_id, favourite: favourite_name)
   end
 
+  # Retrieves the list of favourites.
+  def list_favourites(user_id)
+   @favourites_store.where({user_id: user_id})
+  end
+
   private
 
   def parse_results(venues, favourites)
