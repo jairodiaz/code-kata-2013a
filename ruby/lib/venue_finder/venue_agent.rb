@@ -21,6 +21,11 @@ class VenueAgent
     @favourites_store.create(user_id: user_id, name: favourite_name)
   end
 
+  # Removes a favourite for a given user.
+  def remove_favourite(user_id, favourite_name)
+   @favourites_store.destroy_all(user_id: user_id, name: favourite_name)
+  end
+
   private
 
   def parse_results(venues, favourites)
