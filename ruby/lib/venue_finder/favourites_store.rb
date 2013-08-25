@@ -1,5 +1,7 @@
 # Stores favourites and defines an interface similar to active_record for coupling to rails.
 class FavouritesStore
+
+  # Initialize the store.
   def initialize
     @store = {}
   end
