@@ -9,6 +9,14 @@ describe FavouritesStore do
     end
   end
 
+  describe "#destroy_all" do
+    it "should delete a favourite for a user" do
+      store_1 = FavouritesStore.new
+      store_1.create(user_id: "1", name: "apple")
+      expect(store_1.destroy_all(user_id: "1", name: "apple")).to be_true
+    end
+  end
+
   describe "#where" do
     context "when the user does not have stored favourites" do
       it "should be empty" do
