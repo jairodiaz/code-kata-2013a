@@ -1,5 +1,3 @@
-require 'vcr'
-
 def search_for(query)
   visit '/'
   fill_in 'query', with: query
