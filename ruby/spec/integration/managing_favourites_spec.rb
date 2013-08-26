@@ -24,10 +24,8 @@ feature 'Managing favourite venues' do
     expect(find(:css, '#favourite_1')).not_to be_checked
   end
 
-  scenario 'Displaying favourites' do
-    VCR.use_cassette('video') do
-      search_for 'video'
-    end
+  scenario 'Displaying favourites', js: true do
+    search_for 'video'
     check 'favourite_1'
 
     click_link 'My favourites'

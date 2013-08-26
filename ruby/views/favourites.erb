@@ -57,8 +57,7 @@
         position: relative;
         clear:both;
         width:400px;
-        margin-top:24px;
-        border-top:2px solid #ff4b33;
+        margin-top:0px;
         padding-top:12px;
         text-align:center;
       }
@@ -98,16 +97,10 @@
     </script>
     <div class="container">
       <h1>Your venues</h1>
-      <form method="post">
-        <input type="text" value="<%= h(params[:query]) %>" name="query" id="query" />
-        <input type="submit" value="search" id="submit" />
-      </form>
-      <a id="favourite_link" href="/list_favourites">My favourites</a>
-      <div class="clear"></div>
-      <% if @venues %>
+      <% if @favourites %>
         <div class="result">
-          <p class="title">Matching Venues</p>
-            <% @venues.each_with_index do |venue, i| %>
+          <p class="title">Favourites List</p>
+            <% @favourites.each_with_index do |venue, i| %>
               <a class="venue" href=<%=venue[:canonical_url]%> target="_blank"><%= venue[:name]%></a>
               <input type="checkbox" id="favourite_<%=i%>" name="favourite_<%=i%>" value="" onclick="toggle_favourite('<%=venue[:venue_id]%>', this)" <%=checker(venue[:favourite])%> >
               <p class="address"><%=address(venue[:location])%></p>

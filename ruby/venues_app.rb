@@ -45,7 +45,10 @@ post '/favourite' do
   end
 end
 
-get '/list_favourites'
+get '/list_favourites' do
+  @favourites = VenueFinder.instance.list_favourites(current_user).values
+  erb :favourites
+end
 
 def current_user
   '1'
