@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script language="javascript" type="text/javascript" src="jquery-1.10.2.js"></script>
     <title>Your Favourite Venues</title>
     <style>
       body {
@@ -80,6 +81,17 @@
       </style>
   </head>
   <body>
+    <script type="text/javascript">
+      function toggle_favourite(id, checkbox){
+        var favourite = document.getElementById(id);
+        var name = favourite.getAttribute('data-name');
+        var location = favourite.getAttribute('data-location');
+        var url = favourite.getAttribute('data-url');
+        var saved = checkbox.checked;
+        var data = { "venue_id": id, "name": name, "favourite": saved, "canonical_url": url, "location": location }
+        $.post('/favourite', data);
+      }
+    </script>
     <div class="container">
       <h1>Your venues</h1>
       <form method="post">
@@ -91,10 +103,10 @@
         <div class="result">
           <p class="title">Matching Venues</p>
             <% @venues.each_with_index do |venue, i| %>
-              <a href=<%= venue[:canonical_url] %> target="_blank"><%= venue[:name]%></a>
-              <input type="checkbox" name="favourite_<%=i%>" value="<%=venue[:venue_id]%>"<%=checker(venue[:favourite])%> >
+              <a href=<%=venue[:canonical_url]%> target="_blank"><%= venue[:name]%></a>
+              <input type="checkbox" id="favourite_<%=i%>" name="favourite_<%=i%>" value="" onclick="toggle_favourite('<%=venue[:venue_id]%>', this)" <%=checker(venue[:favourite])%> >
               <p class="address"><%=address(venue[:location])%></p>
-              <p class="address" style="display:none"><%=venue[:venue_id]%></p>
+              <p id="<%=venue[:venue_id]%>" data-name="<%= venue[:name]%>" data-location="<%=address(venue[:location])%>" data-url="<%=venue[:canonical_url]%> " style="display:none"><%=venue[:venue_id]%></p>
             <% end %>
           </div>
       <% end %>

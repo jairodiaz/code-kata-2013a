@@ -10,7 +10,7 @@ module VenueFinder
     # Finds favourite for a given user.
     # @param options Hash of the form { user_id: 'valid-user-id'}
     def where(options)
-      return [] unless @store.has_key?(options[:user_id])
+      return {} unless @store.has_key?(options[:user_id])
       @store[options[:user_id]]
     end
 

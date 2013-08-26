@@ -3,6 +3,7 @@ $: << File.join(File.dirname(__FILE__), ".", "lib")
 require 'sinatra'
 require 'venue_finder'
 require 'awesome_print'
+require 'pry'
 
 helpers do
   include Rack::Utils
@@ -30,6 +31,18 @@ post '/' do
     @venues = VenueFinder.instance.find current_user, params[:query]
   end
   erb :index
+end
+
+post '/favourite' do
+  if params[:venue_id] and not params[:venue_id].empty?
+    if params[:favourite] == "true"
+      VenueFinder.instance.add_favourite current_user, params
+      status 200
+    else
+      VenueFinder.instance.remove_favourite current_user, params
+      status 200
+    end
+  end
 end
 
 def current_user
