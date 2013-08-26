@@ -83,11 +83,11 @@ describe VenueFinder::VenueAgent do
 
   let(:favourite) {
     {
-      venue_id: "4c3234d866e40f478b21c68b",
-      name: "Video City",
-      favourite: true,
-      canonical_url: "https://foursquare.com/v/video-city/4c3234d866e40f478b21c68b",
-      location: location_for_video_city
+      "venue_id" => "4c3234d866e40f478b21c68b",
+      "name" => "Video City",
+      "favourite" => true,
+      "canonical_url" => "https://foursquare.com/v/video-city/4c3234d866e40f478b21c68b",
+      "location" => location_for_video_city
     }
   }
 
