@@ -42,7 +42,34 @@
       #submit:hover {
         background:#ff7866;
       }
-    </style>
+      .clear {
+        height:1px;
+        width:400px;
+        clear:both;
+      }
+      .result {
+        position: relative;
+        clear:both;
+        width:400px;
+        margin-top:12px;
+        border-top:2px solid #ff4b33;
+        padding-top:12px;
+        text-align:center;
+      }
+      .result a {
+        font-size:24px;
+        display:block;
+        margin-top:8px;
+        color:#ff2d11;
+        background:#ffd2cc;
+        padding:8px;
+      }
+      .result input {
+        position: relative;
+        top: -30px;
+        float:right;
+      }
+      </style>
   </head>
   <body>
     <div class="container">
@@ -51,6 +78,21 @@
         <input type="text" value="<%= h(params[:query]) %>" name="query" id="query" />
         <input type="submit" value="search" id="submit" />
       </form>
+      <div class="clear"></div>
+      <% if @venues %>
+        <div class="result">
+          <p>Matching Venues</p>
+          <table border="2" bordercolor="#FF4B33" style="background-color:#FFFFFF" width="100%" cellpadding="3" cellspacing="3">
+          </table>
+            <% @venues.each do |venue| %>
+              <tr>
+                <td><a href=<%= venue[:canonical_url] %> target="_blank"><%= venue[:name]%></a></td>
+                <td><input type="checkbox" name="favourite" value="favourite"<%= checker(venue[:favourite]) %></td>
+                <td><%=address(venue[:location])%></td>
+              </tr>
+              <% end %>
+          </div>
+      <% end %>
     </div>
   </body>
 </html>
