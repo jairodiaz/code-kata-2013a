@@ -24,7 +24,7 @@ module VenueFinder
 
     # Removes a favourite for a given user.
     def remove_favourite(user_id, favourite_name)
-     @favourites_store.destroy_all(user_id: user_id, favourite: favourite_name)
+     @favourites_store.destroy(user_id: user_id, favourite: favourite_name)
     end
 
     # Retrieves the list of favourites.

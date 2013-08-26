@@ -26,12 +26,9 @@ module VenueFinder
 
     # Remove a favourite for a given user.
     # @param options Has of the form { user_id: 'valid-user-id', name: 'valid-name-to-store'}
-    def destroy_all(options)
+    def destroy(options)
       if @store[options[:user_id]]
         @store[options[:user_id]].reject! { |favourite| favourite == options[:favourite] }
-        true
-      else
-        false
       end
     end
   end

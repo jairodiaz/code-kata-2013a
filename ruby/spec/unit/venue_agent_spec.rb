@@ -128,7 +128,7 @@ describe VenueFinder::VenueAgent do
 
   describe "#remove_favourite" do
     it "should remove a favourite in the favourites_store" do
-      @store.should_receive(:destroy_all).with({user_id: 'user_id', favourite: favourite }).and_return(true)
+      @store.should_receive(:destroy).with({user_id: 'user_id', favourite: favourite }).and_return(true)
       VenueFinder::VenueAgent.new(@source, @store).remove_favourite('user_id', favourite)
     end
   end

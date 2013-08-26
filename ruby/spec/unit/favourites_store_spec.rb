@@ -26,13 +26,21 @@ describe VenueFinder::FavouritesStore do
     it "should store a favourite for a user" do
       expect(store.create(user_id: "1", favourite: favourite)).to be_true
     end
+
+    context "when adding a second favourite" do
+      it "should remember prevvious stored favourites" do
+        store.create(user_id: "1", favourite: favourite)
+        store.create(user_id: "1", favourite: favourite)
+        expect(store.where(user_id: "1")).to eq [favourite, favourite]
+      end
+    end
   end
 
-  describe "#destroy_all" do
+  describe "#destroy" do
     it "should delete a favourite for a user" do
       store_1 = VenueFinder::FavouritesStore.new
       store_1.create(user_id: "1", favourite: favourite)
-      expect(store_1.destroy_all(user_id: "1", favourite: favourite)).to be_true
+      expect(store_1.destroy(user_id: "1", favourite: favourite)).to be_true
     end
   end
 
