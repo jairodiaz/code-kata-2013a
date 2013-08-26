@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
 gem "foursquare2"
+gem "sinatra"
 
 group :development, :test do
   gem 'rspec', '2.13.0'
@@ -12,4 +13,5 @@ group :development, :test do
   gem 'redcarpet'
   gem 'yard'
   gem 'vcr'
+  gem 'capybara'
 end
