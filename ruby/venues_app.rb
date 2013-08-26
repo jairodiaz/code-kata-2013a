@@ -5,6 +5,8 @@ require 'venue_finder'
 require 'awesome_print'
 require 'pry'
 
+enable :sessions
+
 helpers do
   include Rack::Utils
   alias_method :h, :escape_html
@@ -51,5 +53,5 @@ get '/list_favourites' do
 end
 
 def current_user
-  '1'
+  session["session_id"]
 end

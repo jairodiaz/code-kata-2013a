@@ -103,7 +103,7 @@
             <% @favourites.each_with_index do |venue, i| %>
               <a class="venue" href=<%=venue[:canonical_url]%> target="_blank"><%= venue[:name]%></a>
               <input type="checkbox" id="favourite_<%=i%>" name="favourite_<%=i%>" value="" onclick="toggle_favourite('<%=venue[:venue_id]%>', this)" <%=checker(venue[:favourite])%> >
-              <p class="address"><%=address(venue[:location])%></p>
+              <p class="address"><%=venue[:location]%></p>
               <p id="<%=venue[:venue_id]%>" data-name="<%= venue[:name]%>" data-location="<%=address(venue[:location])%>" data-url="<%=venue[:canonical_url]%> " style="display:none"><%=venue[:venue_id]%></p>
             <% end %>
           </div>
