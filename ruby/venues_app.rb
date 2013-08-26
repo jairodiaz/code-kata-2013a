@@ -17,7 +17,7 @@ helpers do
     begin
       location = "#{address['address']}&nbsp;#{address['postalCode']}"
     rescue
-     "&nbsp;"
+      "&nbsp;"
     end
   end
 end
@@ -44,6 +44,8 @@ post '/favourite' do
     end
   end
 end
+
+get '/list_favourites'
 
 def current_user
   '1'

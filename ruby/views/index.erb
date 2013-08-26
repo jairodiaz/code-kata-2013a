@@ -33,15 +33,20 @@
       #query {
         width:280px;
         margin-right:12px;
+        margin-bottom:12px;
       }
       #submit {
         width:88px;
         border:none;
         background:#ff4b33;
         padding:10px;
+        margin-bottom:10px;
       }
       #submit:hover {
         background:#ff7866;
+      }
+      #favourite_link {
+        text-align:center;
       }
       .clear {
         height:1px;
@@ -52,12 +57,12 @@
         position: relative;
         clear:both;
         width:400px;
-        margin-top:12px;
+        margin-top:24px;
         border-top:2px solid #ff4b33;
         padding-top:12px;
         text-align:center;
       }
-      .result a {
+      .result a.venue {
         font-size:24px;
         display:block;
         margin-top:8px;
@@ -71,7 +76,6 @@
       }
       .result p.address {
         margin-top:2px;
-
       }
       .result input {
         position: relative;
@@ -98,12 +102,13 @@
         <input type="text" value="<%= h(params[:query]) %>" name="query" id="query" />
         <input type="submit" value="search" id="submit" />
       </form>
+      <a id="favourite_link" href="/list_favourites">My favouries</a>
       <div class="clear"></div>
       <% if @venues %>
         <div class="result">
           <p class="title">Matching Venues</p>
             <% @venues.each_with_index do |venue, i| %>
-              <a href=<%=venue[:canonical_url]%> target="_blank"><%= venue[:name]%></a>
+              <a class="venue" href=<%=venue[:canonical_url]%> target="_blank"><%= venue[:name]%></a>
               <input type="checkbox" id="favourite_<%=i%>" name="favourite_<%=i%>" value="" onclick="toggle_favourite('<%=venue[:venue_id]%>', this)" <%=checker(venue[:favourite])%> >
               <p class="address"><%=address(venue[:location])%></p>
               <p id="<%=venue[:venue_id]%>" data-name="<%= venue[:name]%>" data-location="<%=address(venue[:location])%>" data-url="<%=venue[:canonical_url]%> " style="display:none"><%=venue[:venue_id]%></p>
