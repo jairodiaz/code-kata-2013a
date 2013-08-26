@@ -64,6 +64,14 @@
         background:#ffd2cc;
         padding:8px;
       }
+      .result p.title {
+        border-bottom:2px solid #ff4b33;
+        padding-bottom:26px;
+      }
+      .result p.address {
+        margin-top:2px;
+
+      }
       .result input {
         position: relative;
         top: -30px;
@@ -81,16 +89,13 @@
       <div class="clear"></div>
       <% if @venues %>
         <div class="result">
-          <p>Matching Venues</p>
-          <table border="2" bordercolor="#FF4B33" style="background-color:#FFFFFF" width="100%" cellpadding="3" cellspacing="3">
-          </table>
+          <p class="title">Matching Venues</p>
             <% @venues.each_with_index do |venue, i| %>
-              <tr>
-                <td><a href=<%= venue[:canonical_url] %> target="_blank"><%= venue[:name]%></a></td>
-                <td><input type="checkbox" name="favourite_<%=i%>" value="favourite"<%= checker(venue[:favourite]) %></td>
-                <td><%=address(venue[:location])%></td>
-              </tr>
-              <% end %>
+              <a href=<%= venue[:canonical_url] %> target="_blank"><%= venue[:name]%></a>
+              <input type="checkbox" name="favourite_<%=i%>" value="<%=venue[:venue_id]%>"<%=checker(venue[:favourite])%> >
+              <p class="address"><%=address(venue[:location])%></p>
+              <p class="address" style="display:none"><%=venue[:venue_id]%></p>
+            <% end %>
           </div>
       <% end %>
     </div>
