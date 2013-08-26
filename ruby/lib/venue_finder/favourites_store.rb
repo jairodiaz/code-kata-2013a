@@ -18,9 +18,10 @@ module VenueFinder
     # @param options Has of the form { user_id: 'valid-user-id', favourite: 'valid-name-to-store'}
     def create(options)
       if @store[options[:user_id]]
-        @store[options[:user_id]] << options[:favourite]
+        @store[options[:user_id]][options[:favourite]["venue_id"]] = options[:favourite]
       else
-        @store[options[:user_id]] = [options[:favourite]]
+        @store[options[:user_id]] = {}
+        @store[options[:user_id]][options[:favourite]["venue_id"]] = options[:favourite]
       end
     end
 
@@ -28,7 +29,7 @@ module VenueFinder
     # @param options Has of the form { user_id: 'valid-user-id', name: 'valid-name-to-store'}
     def destroy(options)
       if @store[options[:user_id]]
-        @store[options[:user_id]].reject! { |favourite| favourite == options[:favourite] }
+        @store[options[:user_id]].delete(options[:favourite]["venue_id"])
       end
     end
   end
