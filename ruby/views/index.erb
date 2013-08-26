@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Your Favourite Venues</title>
+    <style>
+      body {
+        font-family:"Gill Sans", "Gill Sans MT", Sans-Serif;
+      }
+      .container {
+        width:400px;
+        margin:120px auto 0px auto;
+      }
+      h1 {
+        width:400px;
+        margin-bottom:12px;
+        text-align:center;
+        color:#ff4b33;
+        font-size:40px;
+        padding-bottom:8px;
+        border-bottom:2px solid #ff4b33;
+      }
+      form {
+        display:block;
+        width:400px;
+      }
+      input {
+        display:block;
+        float:left;
+        padding:8px;
+        font-size:16px;
+      }
+      #query {
+        width:280px;
+        margin-right:12px;
+      }
+      #submit {
+        width:88px;
+        border:none;
+        background:#ff4b33;
+        padding:10px;
+      }
+      #submit:hover {
+        background:#ff7866;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Your venues</h1>
+      <form method="post">
+        <input type="text" value="<%= h(params[:query]) %>" name="query" id="query" />
+        <input type="submit" value="search" id="submit" />
+      </form>
+    </div>
+  </body>
+</html>
