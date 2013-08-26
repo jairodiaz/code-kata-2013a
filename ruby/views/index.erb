@@ -2,100 +2,11 @@
 <html>
   <head>
     <script language="javascript" type="text/javascript" src="jquery-1.10.2.js"></script>
+    <link href="application.css" rel="stylesheet" type="text/css">
     <title>Your Favourite Venues</title>
-    <style>
-      body {
-        font-family:"Gill Sans", "Gill Sans MT", Sans-Serif;
-      }
-      .container {
-        width:400px;
-        margin:120px auto 0px auto;
-      }
-      h1 {
-        width:400px;
-        margin-bottom:12px;
-        text-align:center;
-        color:#ff4b33;
-        font-size:40px;
-        padding-bottom:8px;
-        border-bottom:2px solid #ff4b33;
-      }
-      form {
-        display:block;
-        width:400px;
-      }
-      input {
-        display:block;
-        float:left;
-        padding:8px;
-        font-size:16px;
-      }
-      #query {
-        width:280px;
-        margin-right:12px;
-        margin-bottom:12px;
-      }
-      #submit {
-        width:88px;
-        border:none;
-        background:#ff4b33;
-        padding:10px;
-        margin-bottom:10px;
-      }
-      #submit:hover {
-        background:#ff7866;
-      }
-      #favourite_link {
-        text-align:center;
-      }
-      .clear {
-        height:1px;
-        width:400px;
-        clear:both;
-      }
-      .result {
-        position: relative;
-        clear:both;
-        width:400px;
-        margin-top:24px;
-        border-top:2px solid #ff4b33;
-        padding-top:12px;
-        text-align:center;
-      }
-      .result a.venue {
-        font-size:24px;
-        display:block;
-        margin-top:8px;
-        color:#ff2d11;
-        background:#ffd2cc;
-        padding:8px;
-      }
-      .result p.title {
-        border-bottom:2px solid #ff4b33;
-        padding-bottom:26px;
-      }
-      .result p.address {
-        margin-top:2px;
-      }
-      .result input {
-        position: relative;
-        top: -30px;
-        float:right;
-      }
-      </style>
   </head>
   <body>
-    <script type="text/javascript">
-      function toggle_favourite(id, checkbox){
-        var favourite = document.getElementById(id);
-        var name = favourite.getAttribute('data-name');
-        var location = favourite.getAttribute('data-location');
-        var url = favourite.getAttribute('data-url');
-        var saved = checkbox.checked;
-        var data = { "venue_id": id, "name": name, "favourite": saved, "canonical_url": url, "location": location }
-        $.post('/favourite', data);
-      }
-    </script>
+    <script src="application.js" type="text/javascript"></script>
     <div class="container">
       <h1>Your venues</h1>
       <form method="post">

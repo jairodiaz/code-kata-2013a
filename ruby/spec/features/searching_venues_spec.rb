@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 feature 'Searching for a venue' do
-
   scenario 'Visiting the homepage' do
     visit '/'
     expect(page).to have_content 'Your venues'
