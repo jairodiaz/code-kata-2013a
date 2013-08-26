@@ -39,7 +39,7 @@ module VenueFinder
         {
           venue_id: venue["id"],
           name: venue["name"],
-          favourite: favourites.map{ |favorite| favorite["venue_id"] }.include?(venue["id"]),
+          favourite: favourites.keys.include?(venue["id"]),
           canonical_url: venue["canonicalUrl"],
           location: venue["location"]
         }
