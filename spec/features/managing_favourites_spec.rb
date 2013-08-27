@@ -26,7 +26,7 @@ feature 'Managing favourite venues' do
 
   scenario 'Displaying favourites', js: true do
     search_for 'video'
-    check 'favourite_1'
+    check 'favourite_0'
 
     click_link 'My favourites'
     expect(page).to have_content 'Music & Video Exchange'

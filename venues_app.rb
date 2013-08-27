@@ -29,14 +29,14 @@ get '/' do
 end
 
 post '/' do
-  if params[:query] and not params[:query].empty?
+  if params[:query]
     @venues = VenueFinder.instance.find current_user, params[:query]
   end
   erb :index
 end
 
 post '/favourite' do
-  if params[:venue_id] and not params[:venue_id].empty?
+  if params[:venue_id]
     if params[:favourite] == "true"
       VenueFinder.instance.add_favourite current_user, params
       status 200
