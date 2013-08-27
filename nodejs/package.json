@@ -1,8 +1,0 @@
-{
-  "private": true,
-  "name": "interview-project",
-  "version": "1.0.0",
-  "dependencies": {
-    "foursquare-js": "~0.1.0"
-  }
-}
