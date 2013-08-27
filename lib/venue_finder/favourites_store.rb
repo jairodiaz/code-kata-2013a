@@ -15,12 +15,8 @@ module VenueFinder
 
     # Add a favourite for a given user.
     def create(user_id, favourite)
-      if @store[user_id]
-        @store[user_id][favourite["venue_id"]] = favourite
-      else
-        @store[user_id] = {}
-        @store[user_id][favourite["venue_id"]] = favourite
-      end
+      @store[user_id] = {} unless @store[user_id]
+      @store[user_id][favourite["venue_id"]] = favourite
     end
 
     # Remove a favourite for a given user.
