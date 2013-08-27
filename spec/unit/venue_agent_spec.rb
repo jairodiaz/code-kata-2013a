@@ -101,7 +101,7 @@ describe VenueFinder::VenueAgent do
     context "when there is no previous favourites" do
       it "should return a list of venues" do
         results = [venue_video_city, venue_music_and_video_exchange]
-        @store.stub(:where).with({user_id: 'user_id'}).and_return({})
+        @store.stub(:where).with('user_id').and_return({})
         agent = VenueFinder::VenueAgent.new(@source, @store)
         expect(agent.find('user_id', 'video')).to eq results
       end
@@ -112,7 +112,7 @@ describe VenueFinder::VenueAgent do
         favorited_video_city = venue_video_city
         favorited_video_city[:favourite] = true
         results = [favorited_video_city, venue_music_and_video_exchange]
-        @store.stub(:where).with({user_id: 'user_id'}).and_return({"4c3234d866e40f478b21c68b" => favourite})
+        @store.stub(:where).with('user_id').and_return({"4c3234d866e40f478b21c68b" => favourite})
         agent = VenueFinder::VenueAgent.new(@source, @store)
         expect(agent.find('user_id', 'video')).to eq results
       end
@@ -121,21 +121,21 @@ describe VenueFinder::VenueAgent do
 
   describe "#add_favourite" do
     it "should store a favourite in the favourites_store" do
-      @store.should_receive(:create).with({user_id: 'user_id', favourite: favourite }).and_return(true)
+      @store.should_receive(:create).with('user_id', favourite).and_return(true)
       VenueFinder::VenueAgent.new(@source, @store).add_favourite('user_id', favourite)
     end
   end
 
   describe "#remove_favourite" do
     it "should remove a favourite in the favourites_store" do
-      @store.should_receive(:destroy).with({user_id: 'user_id', favourite: favourite }).and_return(true)
+      @store.should_receive(:destroy).with('user_id', favourite).and_return(true)
       VenueFinder::VenueAgent.new(@source, @store).remove_favourite('user_id', favourite)
     end
   end
 
   describe "#list_favourites" do
     it "should display the list of favourites" do
-      @store.should_receive(:where).with({user_id: 'user_id'}).and_return({"4c3234d866e40f478b21c68b" => favourite})
+      @store.should_receive(:where).with('user_id').and_return({"4c3234d866e40f478b21c68b" => favourite})
       VenueFinder::VenueAgent.new(@source, @store).list_favourites('user_id')
     end
   end

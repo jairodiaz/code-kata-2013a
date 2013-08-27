@@ -32,14 +32,14 @@ describe VenueFinder::FavouritesStore do
 
   describe "#create" do
     it "should store a favourite for a user" do
-      expect(store.create(user_id: "1", favourite: favourite)).to be_true
+      expect(store.create("1", favourite)).to be_true
     end
 
     context "when adding a second favourite" do
       it "should remember previous stored favourites" do
-        store.create(user_id: "1", favourite: favourite)
-        store.create(user_id: "1", favourite: favourite2)
-        expect(store.where(user_id: "1")).to eq({ "4c3234d866e40f478b21c68b" => favourite, "000034d866e40f478b21c68b" => favourite2 })
+        store.create("1", favourite)
+        store.create("1", favourite2)
+        expect(store.where("1")).to eq({ "4c3234d866e40f478b21c68b" => favourite, "000034d866e40f478b21c68b" => favourite2 })
       end
     end
   end
@@ -47,23 +47,23 @@ describe VenueFinder::FavouritesStore do
   describe "#destroy" do
     it "should delete a favourite for a user" do
       store_1 = VenueFinder::FavouritesStore.new
-      store_1.create(user_id: "1", favourite: favourite)
-      expect(store_1.destroy(user_id: "1", favourite: favourite)).to be_true
+      store_1.create("1", favourite)
+      expect(store_1.destroy("1", favourite)).to be_true
     end
   end
 
   describe "#where" do
     context "when the user does not have stored favourites" do
       it "should be empty" do
-        expect(store.where(user_id: "user_id")).to be_empty
+        expect(store.where("user_id")).to be_empty
       end
     end
 
     context "when the user has favourites" do
       it "should return previous favourites" do
         store_1 = VenueFinder::FavouritesStore.new
-        store_1.create(user_id: "1", favourite: favourite)
-        expect(store_1.where(user_id: "1")).to eq({ "4c3234d866e40f478b21c68b" => favourite })
+        store_1.create("1", favourite)
+        expect(store_1.where("1")).to eq({ "4c3234d866e40f478b21c68b" => favourite })
       end
     end
   end

@@ -1,5 +1,5 @@
 module VenueFinder
-  # Stores favourites and defines an interface similar to active_record for coupling to rails.
+  # Stores favourites.
   class FavouritesStore
 
     # Initialize the store.
@@ -8,28 +8,25 @@ module VenueFinder
     end
 
     # Finds favourite for a given user.
-    # @param options Hash of the form { user_id: 'valid-user-id'}
-    def where(options)
-      return {} unless @store.has_key?(options[:user_id])
-      @store[options[:user_id]]
+    def where(user_id)
+      return {} unless @store.has_key?(user_id)
+      @store[user_id]
     end
 
     # Add a favourite for a given user.
-    # @param options Has of the form { user_id: 'valid-user-id', favourite: 'valid-name-to-store'}
-    def create(options)
-      if @store[options[:user_id]]
-        @store[options[:user_id]][options[:favourite]["venue_id"]] = options[:favourite]
+    def create(user_id, favourite)
+      if @store[user_id]
+        @store[user_id][favourite["venue_id"]] = favourite
       else
-        @store[options[:user_id]] = {}
-        @store[options[:user_id]][options[:favourite]["venue_id"]] = options[:favourite]
+        @store[user_id] = {}
+        @store[user_id][favourite["venue_id"]] = favourite
       end
     end
 
     # Remove a favourite for a given user.
-    # @param options Has of the form { user_id: 'valid-user-id', name: 'valid-name-to-store'}
-    def destroy(options)
-      if @store[options[:user_id]]
-        @store[options[:user_id]].delete(options[:favourite]["venue_id"])
+    def destroy(user_id, favourite)
+      if @store[user_id]
+        @store[user_id].delete(favourite["venue_id"])
       end
     end
   end

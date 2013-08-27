@@ -12,24 +12,24 @@ module VenueFinder
 
     # Find venues based on a query string and displays favourite results if present.
     def find(user_id, query)
-      favourites = @favourites_store.where(user_id: user_id)
+      favourites = @favourites_store.where(user_id)
       venues = @foursquare_proxy.search_venues(query)
       parse_results(venues, favourites)
     end
 
     # Saves a favourite for a given user.
     def add_favourite(user_id, favourite_name)
-      @favourites_store.create(user_id: user_id, favourite: favourite_name)
+      @favourites_store.create(user_id, favourite_name)
     end
 
     # Removes a favourite for a given user.
     def remove_favourite(user_id, favourite_name)
-     @favourites_store.destroy(user_id: user_id, favourite: favourite_name)
+     @favourites_store.destroy(user_id, favourite_name)
     end
 
     # Retrieves the list of favourites.
     def list_favourites(user_id)
-     @favourites_store.where({user_id: user_id})
+     @favourites_store.where(user_id)
     end
 
     private
