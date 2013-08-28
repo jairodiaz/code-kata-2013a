@@ -2,9 +2,6 @@ require 'spec_helper'
 
 feature 'Managing favourite venues' do
 
-  # Note: VCR is not compatible with capybara-wekbit
-  # therefore it is not used in JS tests.
-
   scenario 'Saving a favourite', js: true do
     search_for 'video'
     check 'favourite_1'
@@ -26,7 +23,7 @@ feature 'Managing favourite venues' do
 
   scenario 'Displaying favourites', js: true do
     search_for 'video'
-    check 'favourite_0'
+    check 'favourite_1'
 
     click_link 'My favourites'
     expect(page).to have_content 'Music & Video Exchange'
