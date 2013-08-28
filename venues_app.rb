@@ -29,22 +29,20 @@ get '/' do
 end
 
 post '/' do
-  if params[:query]
-    @venues = VenueFinder.instance.find current_user, params[:query]
-  end
+  @venues = VenueFinder.instance.find current_user, params[:query] if params[:query]
   erb :index
 end
 
 post '/favourite' do
-  if params[:venue_id]
-    if params[:favourite] == "true"
-      VenueFinder.instance.add_favourite current_user, params
-      status 200
-    else
-      VenueFinder.instance.remove_favourite current_user, params
-      status 200
-    end
-  end
+  return status 500 unless params[:venue_id]
+  VenueFinder.instance.add_favourite current_user, params
+  status 200
+end
+
+delete '/favourite' do
+  return status 500 unless params[:venue_id]
+  VenueFinder.instance.remove_favourite current_user, params
+  status 200
 end
 
 get '/list_favourites' do

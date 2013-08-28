@@ -15,13 +15,13 @@ feature 'Managing favourite venues' do
 
   scenario 'Removing a favourite', js: true do
     search_for 'video'
-    check 'favourite_1'
+    check 'favourite_0'
 
     search_for 'video' #check that favourite is saved
-    uncheck 'favourite_1'
+    uncheck 'favourite_0'
 
     search_for 'video'
-    expect(find(:css, '#favourite_1')).not_to be_checked
+    expect(find(:css, '#favourite_0')).not_to be_checked
   end
 
   scenario 'Displaying favourites', js: true do
