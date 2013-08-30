@@ -37,11 +37,11 @@ module VenueFinder
     def parse_results(venues, favourites)
       venues.map do |venue|
         {
-          venue_id: venue["id"],
-          name: venue["name"],
-          favourite: favourites.has_key?(venue["id"]),
-          canonical_url: venue["canonicalUrl"],
-          location: venue["location"]
+          "venue_id" => venue["id"],
+          "name" => venue["name"],
+          "favourite" => favourites.has_key?(venue["id"]),
+          "canonical_url" => venue["canonicalUrl"],
+          "location" => venue["location"]
         }
       end
     end

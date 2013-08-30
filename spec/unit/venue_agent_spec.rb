@@ -63,21 +63,21 @@ describe VenueFinder::VenueAgent do
 
   let(:venue_video_city) {
     {
-      venue_id: "4c3234d866e40f478b21c68b",
-      name: "Video City",
-      favourite: false,
-      canonical_url: "https://foursquare.com/v/video-city/4c3234d866e40f478b21c68b",
-      location: location_for_video_city
+      "venue_id" => "4c3234d866e40f478b21c68b",
+      "name" => "Video City",
+      "favourite" => false,
+      "canonical_url" => "https://foursquare.com/v/video-city/4c3234d866e40f478b21c68b",
+      "location" => location_for_video_city
     }
   }
 
   let(:venue_music_and_video_exchange) {
     {
-      venue_id: "4c76780066be6dcbc829c30f",
-      name: "Music & Video Exchange",
-      favourite: false,
-      canonical_url: "https://foursquare.com/v/music--video-exchange/4c76780066be6dcbc829c30f",
-      location: location_for_music_and_video_exchange
+      "venue_id" => "4c76780066be6dcbc829c30f",
+      "name" => "Music & Video Exchange",
+      "favourite" => false,
+      "canonical_url" => "https://foursquare.com/v/music--video-exchange/4c76780066be6dcbc829c30f",
+      "location" => location_for_music_and_video_exchange
     }
   }
 
@@ -110,7 +110,7 @@ describe VenueFinder::VenueAgent do
     context "when there is previous favourites" do
       it "should return a list of venues with favourites" do
         favorited_video_city = venue_video_city
-        favorited_video_city[:favourite] = true
+        favorited_video_city["favourite"] = true
         results = [favorited_video_city, venue_music_and_video_exchange]
         @store.stub(:where).with('user_id').and_return({"4c3234d866e40f478b21c68b" => favourite})
         agent = VenueFinder::VenueAgent.new(@source, @store)
