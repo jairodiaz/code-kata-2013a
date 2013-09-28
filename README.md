@@ -12,3 +12,9 @@ Product Requirements:
 * User should be able to mark and unmark a venue as a "favourite".
 * User should be able to retrieve a list of their favourite venues.
 * When searching, any venues previously marked as favourite should be indicated as such.
+
+Improvements:
+
+* Currently the favourite data is temporary stored in the client before it is saved. This may have security implications if the favourite data is modified to cause trouble to the system.
+
+
