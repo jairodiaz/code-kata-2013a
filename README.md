@@ -15,6 +15,7 @@ Product Requirements:
 
 Improvements:
 
-* Currently the favourite data is temporary stored in the client before it is saved. This may have security implications if the favourite data is modified to cause trouble to the system.
+* Currently the favourite data is temporary stored in the client before it is saved. This may have security implications if the favourite data is modified to cause trouble to the system. This could be addressed by creating a temporary store on the server and passing only favourite IDs to the client.
+
 
 
